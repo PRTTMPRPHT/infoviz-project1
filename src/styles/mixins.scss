@@ -1,0 +1,43 @@
+// Creates a standard flex row with optional centering on axes.
+@mixin flex-row($center-horizontal: false, $center-vertical: false) {
+  display: flex;
+  flex-direction: row;
+
+  @if $center-horizontal {
+    justify-content: center;
+  } @else {
+    justify-content: flex-start;
+  }
+
+  @if $center-vertical {
+    align-items: center;
+  } @else {
+    align-items: flex-start;
+  }
+}
+
+// Creates a standard flex column with optional centering on axes.
+@mixin flex-column($center-horizontal: false, $center-vertical: false) {
+  display: flex;
+  flex-direction: column;
+
+  @if $center-horizontal {
+    align-items: center;
+  } @else {
+    align-items: flex-start;
+  }
+
+  @if $center-vertical {
+    justify-content: center;
+  } @else {
+    justify-content: flex-start;
+  }
+}
+
+// Ensures something is truly unselectable everywhere.
+@mixin unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

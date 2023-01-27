@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="overlay" (click)="closeRequested.emit()"></div>
+    <div class="dialog">
+        <div class="header-row">
+            <div class="heading">About & Controls</div>
+            <div class="close-button" (click)="closeRequested.emit()">
+                <span>Close</span>
+                <div class="material-icon">clear</div>
+            </div>
+        </div>
+        <div class="scroll-content">
+            <div class="sub-heading">Controls</div>
+            <ul>
+                <li><b>Click</b> on columns in the heatmap to <em>select and unselect group members</em>.</li>
+                <li><b>Hover</b> over columns in the heatmap to get a <em>preview of their skill profile</em>.</li>
+                <li><b>Click</b> on skill labels in the heatmap to <em>re-sort the heatmap</em>.</li>
+                <li><b>Drag</b> the ends of the slider on the right to <em>change highlighting of the heatmap</em>.</li>
+            </ul>
+            <div class="sub-heading">About</div>
+            <div style="margin-bottom: 20px">Made by Markus Wagner for DH2321 Information Visualization @ KTH Royal Institute of Technology.</div>
+            <div style="margin-bottom: 20px">(<a href="mailto:hej@mwagner.se">hej@mwagner.se</a>)</div>
+            <div class="sub-heading">Author's Notes</div>
+            <div style="margin-bottom: 20px">The original data set was highly anonymized (e.g. by replacing pseudonyms with elements from the periodic table).</div>
+            <div style="margin-bottom: 20px">Skills were mapped according to the following questions:</div>
+            <table>
+                <tr>
+                    <th>Skill</th>
+                    <th>Question</th>
+                </tr>
+                <tr *ngFor="let skill of SKILL_QUESTIONS">
+                    <td>{{skill.name}}</td>
+                    <td>{{skill.question}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

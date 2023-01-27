@@ -1,0 +1,119 @@
+@import "/src/styles/mixins";
+
+:host {
+    @include flex-column;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    border-right: 1px dotted #aaa;
+    overflow: hidden;
+}
+
+.sub-header-row {
+    @include flex-row(false, true);
+    width: 100%;
+    border-bottom: 1px dotted #aaa;
+
+    > .button {
+        @include flex-row(false, true);
+        @include unselectable;
+        padding: 8px 15px;
+        cursor: pointer;
+        color: #888;
+        border-right: 1px dotted #aaa;
+
+        > span {
+            display: block;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+    }
+}
+
+.header-row {
+    @include flex-row(false, true);
+    width: 100%;
+    border-bottom: 1px dotted #aaa;
+
+    > .add-button {
+        @include flex-row(false, true);
+        @include unselectable;
+        margin-left: auto;
+        cursor: pointer;
+        margin-right: 10px;
+        color: #888;
+
+        > span {
+            display: block;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+    }
+
+    > .max-reached {
+        @include unselectable;
+        margin-left: auto;
+        display: block;
+        color: #888;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    > .tabs {
+        @include flex-row(false, true);
+        border: 1px dotted #aaa;
+        border-left: none;
+        border-bottom: none;
+
+        > .tab {
+            @include unselectable;
+            padding: 8px 10px;
+
+            &:not(:last-child) {
+                border-right: 1px dotted #aaa;
+            }
+
+            &:not(.selected) {
+                cursor: pointer;
+            }
+
+            &.selected {
+                background-color: #eee;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.scroll-content {
+    flex-grow: 1;
+    width: 100%;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+    > .hint {
+        color: #888;
+        font-size: 14px;
+    }
+
+    > .poi {
+        animation: fade-in 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        > .alias {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        > .description {
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+    }
+}

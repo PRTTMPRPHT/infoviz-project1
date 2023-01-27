@@ -1,0 +1,64 @@
+@import "/src/styles/mixins";
+
+:host {
+    @include flex-column(true, true);
+    flex-grow: 1;
+    width: 100%;
+}
+
+.charts-container {
+    @include flex-column(true, true);
+    width: 1280px;
+    box-sizing: border-box;
+    border: 1px dotted #aaa;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    > .header-row {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        > .heading {
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        > .tail-content {
+            @include flex-row(false, true);
+
+            > .help-button {
+                @include flex-row(false, true);
+                cursor: pointer;
+                margin-right: 25px;
+                color: #888;
+
+                > span {
+                    display: block;
+                    margin-right: 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    > .bottom-row {
+        @include flex-row(false, true);
+        justify-content: space-between;
+        width: 100%;
+        height: 400px;
+
+        > :first-child {
+            width: 50%;
+            flex-shrink: 0;
+        }
+
+        > :last-child {
+            margin-right: 50px;
+        }
+    }
+}

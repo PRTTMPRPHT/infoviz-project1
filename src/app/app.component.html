@@ -1,0 +1,29 @@
+<div class="charts-container">
+    <div class="header-row">
+        <div class="heading">Self-assessed skill profiles</div>
+        <div class="tail-content">
+            <div class="help-button" (click)="displayInfoDialog = true">
+                <span>About & Controls</span>
+                <div class="material-icon-outlined">help</div>
+            </div>
+        </div>
+    </div>
+    <viz-heatmap [dataSet]="data$ | async"
+                 [selection]="((groups$ | async) ?? [[]])[selectedGroup] ?? []"
+                 (hoverChanged)="hoverParticipant$.next($event)"
+                 (selectionChanged)="heatmapSelectionChanged($event)"></viz-heatmap>
+    <div class="bottom-row">
+        <viz-descriptions [dataSet]="data$ | async"
+                          (removeGroupRequested)="removeGroup($event)"
+                          (addGroupRequested)="addGroup()"
+                          (clearGroupRequested)="clearGroup($event)"
+                          (groupSelected)="selectedGroup = $event"
+                          [groups]="(groups$ | async) ?? [[]]"></viz-descriptions>
+        <viz-skill-radar [dataSet]="data$ | async"
+                         [hoverParticipant]="hoverParticipant$ | async"
+                         [selectedGroup]="selectedGroup"
+                         [groups]="(groups$ | async) ?? [[]]"></viz-skill-radar>
+    </div>
+</div>
+
+<viz-info-dialog *ngIf="displayInfoDialog" (closeRequested)="displayInfoDialog = false"></viz-info-dialog>

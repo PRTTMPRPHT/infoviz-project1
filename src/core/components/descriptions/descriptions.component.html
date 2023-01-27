@@ -1,0 +1,34 @@
+<div class="header-row">
+    <div class="tabs">
+        <div class="tab"
+             *ngFor="let group of groups; index as i"
+             (click)="selectGroup(i)"
+             [class.selected]="i === selectedGroup">Group {{i + 1}}</div>
+    </div>
+    <div class="add-button" *ngIf="groups.length < 4" (click)="addGroup()">
+        <span>Add group</span>
+        <div class="material-icon">add</div>
+    </div>
+    <div class="max-reached" *ngIf="groups.length >= 4">Group limit reached.</div>
+</div>
+<div class="sub-header-row">
+    <div class="button" (click)="clearSelectedGroup()">
+        <span>Clear group</span>
+        <div class="material-icon">clear</div>
+    </div>
+    <div class="button" *ngIf="selectedGroup !== 0" (click)="removeSelectedGroup()">
+        <span>Remove group</span>
+        <div class="material-icon">delete</div>
+    </div>
+</div>
+<div class="scroll-content">
+    <ng-container *ngIf="!personsOfInterest.length">
+        <div class="hint">
+            Add members to your group by clicking on columns above!
+        </div>
+    </ng-container>
+    <div class="poi" *ngFor="let member of personsOfInterest">
+        <div class="alias">{{member.alias}}</div>
+        <div class="description">{{member.selfDescription || "[AUTHOR'S NOTE: no description was submitted]"}}</div>
+    </div>
+</div>
