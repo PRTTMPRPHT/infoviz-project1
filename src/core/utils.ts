@@ -9,7 +9,7 @@ export namespace QueryUtils {
      * @returns {Promise<RawDataSet>} The dataset.
      */
     export async function obtainDataSet(): Promise<RawDataSet> {
-        const res = await fetch("/assets/data.json");
+        const res = await fetch("assets/data.json");
         return (await res.json()) as unknown as RawDataSet;
     }
 }
