@@ -1,7 +1,7 @@
 # DH2321 Information Visualization - Project 1
 
 <p align="center">
-    <img src="https://github.com/PRTTMPRPHT/infoviz-project1/raw/master/about.png" alt="Overview of the main visual structures" width="320" height="240">
+    <img src="https://github.com/PRTTMPRPHT/infoviz-project1/raw/master/about.png" alt="Overview of the main visual structures" width="640" height="480">
 </p>
 
 This is was the first individual project done for a course in Information Visualization in my master's degree, in 2023.
