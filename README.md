@@ -1,27 +1,26 @@
-# InfovizProject1
+# DH2321 Information Visualization - Project 1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+<p align="center">
+    <img src="https://github.com/PRTTMPRPHT/infoviz-project1/raw/master/about.png" alt="Overview of the main visual structures" width="320" height="240">
+</p>
 
-## Development server
+This is was the first individual project done for a course in Information Visualization in my master's degree, in 2023.
+The assignment was as follows:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<blockquote>
+Your task is to design an information visualization system to support the creation of the best possible groups of four or five people for the Final Group Project in your Information Visualization course.
+</blockquote>
 
-## Code scaffolding
+The data stems from a survey all students took at the beginning of the course. It has been fully anonymized with pseudonyms for publishing on GitHub.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Try it out: https://prttmprpht.github.io/infoviz-project1/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Starting the development environment
 
-## Running unit tests
+Install dependencies using `npm i`, then use `npm start`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## License
 
-## Running end-to-end tests
+By contributing, you agree that your contributions will be licensed under the project's [MIT License](https://github.com/PRTTMPRPHT/ratiod/blob/master/LICENSE).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
